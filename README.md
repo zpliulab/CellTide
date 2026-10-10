@@ -26,25 +26,7 @@ The directory also includes comparison outputs under the analysis labels GAC, DI
 
 Virtual perturbations generate candidate regulatory hypotheses and do not establish experimentally validated causality. Potential landscapes are computational representations and should not be interpreted as directly measured physical energy.
 
-## Directory contents
 
-| File or directory | Description |
-| --- | --- |
-| `中文初稿_工作副本.docx` | Working copy of the Chinese manuscript |
-| `main_extracted.txt`, `supp_extracted.txt` | Extracted text from the main manuscript and supplementary materials |
-| `work/manuscript.txt` | Manuscript text used during revision |
-| `celltide_transition_inputs/` | Prepared transition analysis inputs in CSV and XLSX formats |
-| `transition_aligned_results/` | Dataset-specific scores, bootstrap results, transition predictions, and interval-aligned figures |
-| `compare_tipping_points_h5ad.py` | Balanced sampling and multi-index tipping point comparisons using ordered h5ad datasets |
-| `run_official_biotip.R` | Calculation of official BioTIP scores using the BioTIP package |
-| `plot_transition_aligned_tipping.py` | Mapping of state scores to adjacent-stage intervals and comparative visualization |
-| `compare_gene_selection_classification.py` | Gene selection and classification comparisons |
-| `gene_energy_landscape_*_warm_halo.py` | Dataset-specific potential landscape plotting scripts |
-| `build_*validation.mjs`, `outputs/` | Candidate regulatory interaction assessment scripts and spreadsheet outputs |
-| `RegNetwork.csv`, `ChEA_2022.gmt`, `ENCODE_ChEA_consensus.gmt` | Regulatory priors and gene set resources |
-| `doke_trajectory_reproduction/` | Reproduction materials for the original pancreatic trajectory study; see its `REPORT.md` |
-| `cover_letter_revision/` | Cover letter drafts and related materials |
-| `CellTide_NC投稿补充清单.md` | Checklist of supplementary analyses and evidence needed for submission |
 
 ## Running supplementary analyses
 
