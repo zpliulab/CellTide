@@ -1,0 +1,13 @@
+Subgraph Statistics
+========================================
+num_nodes: 10
+num_tf_nodes: 9
+num_target_nodes: 1
+num_edges: 72
+tf_to_tf_edges: 64
+tf_to_target_edges: 8
+avg_out_degree: 8.0
+max_out_degree: 9
+avg_in_degree: 7.2
+max_in_degree: 8
+top_hubs: {'ARID5B': 9, 'MIF': 9, 'MYC': 9, 'KLF1': 8, 'MCM3': 8}
