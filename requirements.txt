@@ -1,0 +1,10 @@
+# Unpinned dependencies; select mutually compatible versions for your environment.
+numpy
+pandas
+scipy
+scikit-learn
+networkx
+anndata
+torch
+torch-geometric
+scgpt
