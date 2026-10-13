@@ -15,7 +15,6 @@ This repository contains stage-specific network inference, gene graph embedding 
 | 5. Rank candidate TFs and targets | `perturbation/perturbation.py` | [README](perturbation/README.md) |
 | Run steps 4–5 and export results | `examples/run_analysis.py` | [README](examples/README.md) |
 
-`pinjie.py` assembles common-gene stage embeddings into CSV and NPZ outputs. Cross-stage coordinate comparability and real-data end-to-end validation remain necessary.
 
 ## Upstream data contract
 
