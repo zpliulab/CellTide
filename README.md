@@ -15,7 +15,7 @@ This repository contains stage-specific network inference, gene graph embedding 
 | 5. Rank candidate TFs and targets | `perturbation/perturbation.py` | [README](perturbation/README.md) |
 | Run steps 4–5 and export results | `examples/run_analysis.py` | [README](examples/README.md) |
 
-**`pinjie.py` is intentionally empty.** The complete trajectory workflow is therefore pending embedding assembly and coordinate comparability checks. This bundle is not presented as an already validated end-to-end pipeline.
+`pinjie.py` assembles common-gene stage embeddings into CSV and NPZ outputs. Cross-stage coordinate comparability and real-data end-to-end validation remain necessary.
 
 ## Upstream data contract
 
@@ -33,10 +33,16 @@ python network_inference/infer_stage_networks.py --expressions data/N.csv data/L
 python graph_embedding/train_scgpt_multitask_recon.py --adata data/N.h5ad --network results/networks/network_stage1.csv --model-dir checkpoints/scGPT_human --counts-layer counts --weight-col CondPCC --stage N --output results/embeddings/N
 ```
 
-Repeat embedding training for each stage. After an appropriately assembled/aligned trajectory NPZ is available, use:
+Repeat embedding training for each stage. Assemble the ordered stage CSV files first:
 
 ```bash
-python -m examples.run_analysis --embeddings data/trajectory_embeddings.npz --network results/networks/network_union_all_stages.csv --weight-col CMI_1 --output results/analysis
+python embedding_merge/pinjie.py --files results/embeddings/N/embeddings.csv results/embeddings/LGIN/embeddings.csv results/embeddings/HGIN/embeddings.csv --stages N LGIN HGIN --output results/merged
+```
+
+After confirming cross-stage coordinate comparability, use:
+
+```bash
+python -m examples.run_analysis --embeddings results/merged/trajectory_embeddings.npz --network results/networks/network_union_all_stages.csv --weight-col CMI_1 --output results/analysis
 ```
 
 `CMI_1` is only an example. Choose the network stage explicitly using `stage_mapping.csv`; the program does not automatically decide whether the source or destination network should be used.
